@@ -12,8 +12,14 @@ def getEmployeeList():
         names.append(item["Name"])
     return names
 
-for employee in getEmployeeList():
-    print(employee)
+def getEmployeeProject(name):
+    project = "No project assigned"
+    name = name.lower()
+    for item in dataList:
+        if (item["Name"].lower() in name.lower()):
+            project = "" + item["Project"]
+    return project
+
 def updatingProjectData(namegiven, projects):
     for item in dataList:
         if(item["Name"] == namegiven):
