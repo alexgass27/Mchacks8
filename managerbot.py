@@ -30,7 +30,6 @@ dataList = collection.find()
 x = []
 for item in dataList:
     #print("Task: " + item["task"] + " Employees: " + str(item["employees"]) + " Due Date: " + str(item["due_date"]))
-
     x.append("Task: " + item["task"] + "\n" + " Employees: " + str(item["employees"]) + "\n" + " Due Date: " + str(item["due_date"]) + "\n")
 
 class ManagerBot:
