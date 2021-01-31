@@ -34,7 +34,8 @@ def addTask(namegiven, task):
                 {"$push": {"Tasks": task}}
                 )
 #dataList.sort({"Productivity":-1}).limit(1) // for MAX
-def pickBestWorker(projects):
+
+def employeeRec(projects):
     for item in dataList:
         if(item["Project"] == projects and item["Productivity"] > str(8.5)):
             print("I recommend you assign the task to this employee: " + item["Name"])
@@ -43,10 +44,7 @@ def pickBestWorker(projects):
             #{ "Project": projects},
             #{"$push": {"Tasks": task}}
             #)
-pickBestWorker("A")
-
-
-
+employeeRec("A")
 
 #addTask("Michael","4")
 #moveTaskToCompleted("Michael","4")
