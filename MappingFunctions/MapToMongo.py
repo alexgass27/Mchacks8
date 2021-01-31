@@ -6,6 +6,13 @@ db = client.Employee_Data
 collection = db['task_info']
 dataList = collection.find()
 
+def getStatusReport(name):
+    report = "No report available"
+    for item in datalist:
+        if (item["Name"].lower() in name.lower()):
+            report = "" + item["Status"]
+    return report
+
 def getEmployeeList():
     names = []
     for item in dataList:
