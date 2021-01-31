@@ -6,6 +6,14 @@ db = client.Employee_Data
 collection = db['task_info']
 dataList = collection.find()
 
+def getEmployeesByProject(project):
+    employees = ""
+    for item in dataList:
+        if (item["Project"].lower() in project.lower()):
+            employees = employees + item["Name"] + ", "
+    employees = employees[:-2]
+    return employees
+
 def getStatusReport(name):
     report = "No report available"
     for item in dataList:
@@ -30,6 +38,7 @@ def getCompletedTasks(name):
                 completed = completed + complete + ", "
             completed = completed[:-2]
     return completed
+
 def getStatusReport(name):
     report = "No report available"
     for item in datalist:
