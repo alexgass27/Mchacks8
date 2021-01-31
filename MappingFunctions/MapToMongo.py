@@ -6,6 +6,14 @@ db = client.Employee_Data
 collection = db['task_info']
 dataList = collection.find()
 
+def getEmployeeList():
+    names = []
+    for item in dataList:
+        names.append(item["Name"])
+    return names
+
+for employee in getEmployeeList():
+    print(employee)
 def updatingProjectData(namegiven, projects):
     for item in dataList:
         if(item["Name"] == namegiven):
